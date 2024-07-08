@@ -1,0 +1,18 @@
+doctype html
+head
+  link(rel='stylesheet' href='/style.css')
+form#formulario(action='/crearUsuario' method='post')
+  ul
+    li
+      label(for='nombre') Nombre:
+      input#nombre(type='text' name='nombre')
+    li
+      label(for='email') Correo electr &oacute;nico:
+      input#email(type='email' name='email')
+    li
+      label(for='mensaje') Mensaje:
+      textarea#mensaje(name='mensaje')
+    li
+      label(for='enviar')
+      input#enviar(type='submit' name='enviar' value='Enviar')
+script(src='/usuario.js')
