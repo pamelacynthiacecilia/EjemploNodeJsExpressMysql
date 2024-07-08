@@ -27,17 +27,19 @@ app.use(express.static('./public/js'))
 
 
 //rutas 
+
+// get renderiza a vista formulario
 app.get('/', function(req, res){
-    //res.send('aplicación iniciada')
-    //conectar()
     res.render('usuario.pug')
     })
-    
+
+// post recibe los datos del formulario
 app.post('/crearUsuario', function(req, res){
       const nombre= req.body.nombre;
         const email= req.body.email;
         const mensaje= req.body.mensaje;
 
+    //llama al modelo usuario metodo crearUsuario
      const usuario= Usuario.crearUsuario(nombre, email, mensaje)
 
     const respuesta= {
@@ -49,9 +51,6 @@ app.post('/crearUsuario', function(req, res){
         }
     }
         res.json(respuesta)
-
-        // const formData = req.body;
-        // console.log('Datos recibidos: ', formData);
         
        // res.render('usuario.pug')
         })
